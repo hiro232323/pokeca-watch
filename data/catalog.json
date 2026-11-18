@@ -1,1 +1,690 @@
-{}
+{
+  "002 234/193": {
+    "match_status": "number_and_exact_name",
+    "name": "ピカチュウex",
+    "printed_number": "234/193",
+    "provider": "TCGdex",
+    "tcgdex_id": "M2a-234",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M2a-234"
+  },
+  "003 223/184": {
+    "match_status": "number_and_exact_name",
+    "name": "ピカチュウVMAX",
+    "printed_number": "223/184",
+    "provider": "TCGdex",
+    "tcgdex_id": "S8b-223",
+    "url": "https://api.tcgdex.net/v2/ja/cards/S8b-223"
+  },
+  "004 279/184": {
+    "match_status": "number_and_exact_name",
+    "name": "ピカチュウVMAX",
+    "printed_number": "279/184",
+    "provider": "TCGdex",
+    "tcgdex_id": "S8b-279",
+    "url": "https://api.tcgdex.net/v2/ja/cards/S8b-279"
+  },
+  "005 205/172": {
+    "match_status": "number_and_exact_name",
+    "name": "ピカチュウ",
+    "printed_number": "205/172",
+    "provider": "TCGdex",
+    "tcgdex_id": "S12a-205",
+    "url": "https://api.tcgdex.net/v2/ja/cards/S12a-205"
+  },
+  "006 217/187": {
+    "match_status": "number_and_exact_name",
+    "name": "ブラッキーex",
+    "printed_number": "217/187",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV8a-217",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV8a-217"
+  },
+  "011 212/187": {
+    "match_status": "number_and_exact_name",
+    "name": "ニンフィアex",
+    "printed_number": "212/187",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV8a-212",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV8a-212"
+  },
+  "012 347/190": {
+    "match_status": "number_and_exact_name",
+    "name": "ミュウex",
+    "printed_number": "347/190",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV4a-347",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV4a-347"
+  },
+  "013 201/165": {
+    "match_status": "number_and_exact_name",
+    "name": "リザードンex",
+    "printed_number": "201/165",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV2a-201",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV2a-201"
+  },
+  "014 134/108": {
+    "match_status": "number_and_exact_name",
+    "name": "リザードンex",
+    "printed_number": "134/108",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV3-134",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV3-134"
+  },
+  "015 349/190": {
+    "match_status": "number_and_exact_name",
+    "name": "リザードンex",
+    "printed_number": "349/190",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV4a-349",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV4a-349"
+  },
+  "017 110/076": {
+    "match_status": "number_and_exact_name",
+    "name": "メガレックウザex",
+    "printed_number": "110/076",
+    "provider": "TCGdex",
+    "tcgdex_id": "M6-110",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M6-110"
+  },
+  "018 240/193": {
+    "match_status": "number_and_exact_name",
+    "name": "メガゲンガーex",
+    "printed_number": "240/193",
+    "provider": "TCGdex",
+    "tcgdex_id": "M2a-240",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M2a-240"
+  },
+  "021 090/066": {
+    "match_status": "number_and_exact_name",
+    "name": "ゲッコウガex",
+    "printed_number": "090/066",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV5a-090",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV5a-090"
+  },
+  "022 096/071": {
+    "match_status": "number_and_exact_name",
+    "name": "ナンジャモ",
+    "printed_number": "096/071",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV2D-096",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV2D-096"
+  },
+  "023 087/063": {
+    "match_status": "number_and_exact_name",
+    "name": "シロナのガブリアスex",
+    "printed_number": "087/063",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV9a-087",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV9a-087"
+  },
+  "024 125/098": {
+    "match_status": "number_and_exact_name",
+    "name": "ロケット団のミュウツーex",
+    "printed_number": "125/098",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV10-125",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV10-125"
+  },
+  "025 087/064": {
+    "match_status": "number_and_exact_name",
+    "name": "ラティアスex",
+    "printed_number": "087/064",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV7a-087",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV7a-087"
+  },
+  "026 246/193": {
+    "match_status": "number_and_exact_name",
+    "name": "メガカイリューex",
+    "printed_number": "246/193",
+    "provider": "TCGdex",
+    "tcgdex_id": "M2a-246",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M2a-246"
+  },
+  "028 091/063": {
+    "match_status": "number_and_exact_name",
+    "name": "リーリエの決心",
+    "printed_number": "091/063",
+    "provider": "TCGdex",
+    "tcgdex_id": "M1L-091",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M1L-091"
+  },
+  "029 088/063": {
+    "match_status": "number_and_exact_name",
+    "name": "メガラティアスex",
+    "printed_number": "088/063",
+    "provider": "TCGdex",
+    "tcgdex_id": "M1S-088",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M1S-088"
+  },
+  "030 089/063": {
+    "match_status": "number_and_exact_name",
+    "name": "メガガルーラex",
+    "printed_number": "089/063",
+    "provider": "TCGdex",
+    "tcgdex_id": "M1S-089",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M1S-089"
+  },
+  "031 087/063": {
+    "match_status": "number_and_exact_name",
+    "name": "メガサーナイトex",
+    "printed_number": "087/063",
+    "provider": "TCGdex",
+    "tcgdex_id": "M1S-087",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M1S-087"
+  },
+  "032 088/063": {
+    "match_status": "number_and_exact_name",
+    "name": "メガルカリオex",
+    "printed_number": "088/063",
+    "provider": "TCGdex",
+    "tcgdex_id": "M1L-088",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M1L-088"
+  },
+  "033 114/080": {
+    "match_status": "number_and_exact_name",
+    "name": "ニャースex",
+    "printed_number": "114/080",
+    "provider": "TCGdex",
+    "tcgdex_id": "M3-114",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M3-114"
+  },
+  "034 115/080": {
+    "match_status": "number_and_exact_name",
+    "name": "メイのはげまし",
+    "printed_number": "115/080",
+    "provider": "TCGdex",
+    "tcgdex_id": "M3-115",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M3-115"
+  },
+  "036 111/080": {
+    "match_status": "number_and_exact_name",
+    "name": "メガスターミーex",
+    "printed_number": "111/080",
+    "provider": "TCGdex",
+    "tcgdex_id": "M3-111",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M3-111"
+  },
+  "037 117/083": {
+    "match_status": "number_and_exact_name",
+    "name": "チラチーノex",
+    "printed_number": "117/083",
+    "provider": "TCGdex",
+    "tcgdex_id": "M4-117",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M4-117"
+  },
+  "038 114/083": {
+    "match_status": "number_and_exact_name",
+    "name": "メガゲッコウガex",
+    "printed_number": "114/083",
+    "provider": "TCGdex",
+    "tcgdex_id": "M4-114",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M4-114"
+  },
+  "039 117/081": {
+    "match_status": "number_and_exact_name",
+    "name": "ムク",
+    "printed_number": "117/081",
+    "provider": "TCGdex",
+    "tcgdex_id": "M5-117",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M5-117"
+  },
+  "041 114/081": {
+    "match_status": "number_and_exact_name",
+    "name": "メガダークライex",
+    "printed_number": "114/081",
+    "provider": "TCGdex",
+    "tcgdex_id": "M5-114",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M5-114"
+  },
+  "042 112/076": {
+    "match_status": "number_and_exact_name",
+    "name": "ヒガナの信頼",
+    "printed_number": "112/076",
+    "provider": "TCGdex",
+    "tcgdex_id": "M6-112",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M6-112"
+  },
+  "043 108/076": {
+    "match_status": "number_and_exact_name",
+    "name": "ライコウex",
+    "printed_number": "108/076",
+    "provider": "TCGdex",
+    "tcgdex_id": "M6-108",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M6-108"
+  },
+  "044 131/103": {
+    "match_status": "number_and_exact_name",
+    "name": "ゲンガーex",
+    "printed_number": "131/103",
+    "provider": "TCGdex",
+    "tcgdex_id": "M6a-131",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M6a-131"
+  },
+  "045 094/080": {
+    "match_status": "number_and_exact_name",
+    "name": "メガリザードンXex",
+    "printed_number": "094/080",
+    "provider": "TCGdex",
+    "tcgdex_id": "M2-094",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M2-094"
+  },
+  "046 073/071": {
+    "match_status": "number_and_exact_name",
+    "name": "ピカチュウ",
+    "printed_number": "073/071",
+    "provider": "TCGdex",
+    "tcgdex_id": "S10a-073",
+    "url": "https://api.tcgdex.net/v2/ja/cards/S10a-073"
+  },
+  "047 074/071": {
+    "match_status": "number_and_exact_name",
+    "name": "ゲンガー",
+    "printed_number": "074/071",
+    "provider": "TCGdex",
+    "tcgdex_id": "S10a-074",
+    "url": "https://api.tcgdex.net/v2/ja/cards/S10a-074"
+  },
+  "048 077/071": {
+    "match_status": "number_and_exact_name",
+    "name": "カビゴン",
+    "printed_number": "077/071",
+    "provider": "TCGdex",
+    "tcgdex_id": "S10a-077",
+    "url": "https://api.tcgdex.net/v2/ja/cards/S10a-077"
+  },
+  "049 088/071": {
+    "match_status": "number_and_exact_name",
+    "name": "ラブトロスV",
+    "printed_number": "088/071",
+    "provider": "TCGdex",
+    "tcgdex_id": "S10a-088",
+    "url": "https://api.tcgdex.net/v2/ja/cards/S10a-088"
+  },
+  "050 082/068": {
+    "match_status": "number_and_exact_name",
+    "name": "ふりそで",
+    "printed_number": "082/068",
+    "provider": "TCGdex",
+    "tcgdex_id": "S11a-082",
+    "url": "https://api.tcgdex.net/v2/ja/cards/S11a-082"
+  },
+  "051 084/068": {
+    "match_status": "number_and_exact_name",
+    "name": "ジャローダV",
+    "printed_number": "084/068",
+    "provider": "TCGdex",
+    "tcgdex_id": "S11a-084",
+    "url": "https://api.tcgdex.net/v2/ja/cards/S11a-084"
+  },
+  "052 081/068": {
+    "match_status": "number_and_exact_name",
+    "name": "セレナ",
+    "printed_number": "081/068",
+    "provider": "TCGdex",
+    "tcgdex_id": "S11a-081",
+    "url": "https://api.tcgdex.net/v2/ja/cards/S11a-081"
+  },
+  "053 262/172": {
+    "match_status": "number_and_exact_name",
+    "name": "アルセウスVSTAR",
+    "printed_number": "262/172",
+    "provider": "TCGdex",
+    "tcgdex_id": "S12a-262",
+    "url": "https://api.tcgdex.net/v2/ja/cards/S12a-262"
+  },
+  "054 259/172": {
+    "match_status": "number_and_exact_name",
+    "name": "オリジンパルキアVSTAR",
+    "printed_number": "259/172",
+    "provider": "TCGdex",
+    "tcgdex_id": "S12a-259",
+    "url": "https://api.tcgdex.net/v2/ja/cards/S12a-259"
+  },
+  "055 261/172": {
+    "match_status": "number_and_exact_name",
+    "name": "ギラティナVSTAR",
+    "printed_number": "261/172",
+    "provider": "TCGdex",
+    "tcgdex_id": "S12a-261",
+    "url": "https://api.tcgdex.net/v2/ja/cards/S12a-261"
+  },
+  "056 221/172": {
+    "match_status": "number_and_exact_name",
+    "name": "ミュウツーVSTAR",
+    "printed_number": "221/172",
+    "provider": "TCGdex",
+    "tcgdex_id": "S12a-221",
+    "url": "https://api.tcgdex.net/v2/ja/cards/S12a-221"
+  },
+  "057 252/184": {
+    "match_status": "number_and_exact_name",
+    "name": "レックウザVMAX",
+    "printed_number": "252/184",
+    "provider": "TCGdex",
+    "tcgdex_id": "S8b-252",
+    "url": "https://api.tcgdex.net/v2/ja/cards/S8b-252"
+  },
+  "058 284/184": {
+    "match_status": "number_and_exact_name",
+    "name": "レックウザVMAX",
+    "printed_number": "284/184",
+    "provider": "TCGdex",
+    "tcgdex_id": "S8b-284",
+    "url": "https://api.tcgdex.net/v2/ja/cards/S8b-284"
+  },
+  "059 112/100": {
+    "match_status": "number_and_exact_name",
+    "name": "アルセウスV",
+    "printed_number": "112/100",
+    "provider": "TCGdex",
+    "tcgdex_id": "S9-112",
+    "url": "https://api.tcgdex.net/v2/ja/cards/S9-112"
+  },
+  "060 126/100": {
+    "match_status": "number_and_exact_name",
+    "name": "ハイパーボール",
+    "printed_number": "126/100",
+    "provider": "TCGdex",
+    "tcgdex_id": "S9-126",
+    "url": "https://api.tcgdex.net/v2/ja/cards/S9-126"
+  },
+  "061 103/100": {
+    "match_status": "number_and_exact_name",
+    "name": "リザードンV",
+    "printed_number": "103/100",
+    "provider": "TCGdex",
+    "tcgdex_id": "S9-103",
+    "url": "https://api.tcgdex.net/v2/ja/cards/S9-103"
+  },
+  "062 118/100": {
+    "match_status": "number_and_exact_name",
+    "name": "リザードンVSTAR",
+    "printed_number": "118/100",
+    "provider": "TCGdex",
+    "tcgdex_id": "S9-118",
+    "url": "https://api.tcgdex.net/v2/ja/cards/S9-118"
+  },
+  "063 058/049": {
+    "match_status": "number_and_exact_name",
+    "name": "ミミッキュ",
+    "printed_number": "058/049",
+    "provider": "TCGdex",
+    "tcgdex_id": "SM11b-058",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SM11b-058"
+  },
+  "065 169/086": {
+    "match_status": "number_and_exact_name",
+    "name": "ゼクロムex",
+    "printed_number": "169/086",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV11B-169",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV11B-169"
+  },
+  "066 168/086": {
+    "match_status": "number_and_exact_name",
+    "name": "レシラムex",
+    "printed_number": "168/086",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV11W-168",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV11W-168"
+  },
+  "067 084/078": {
+    "match_status": "number_and_exact_name",
+    "name": "キルリア",
+    "printed_number": "084/078",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV1S-084",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV1S-084"
+  },
+  "068 208/165": {
+    "match_status": "number_and_exact_name",
+    "name": "ミュウex",
+    "printed_number": "208/165",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV2a-208",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV2a-208"
+  },
+  "069 206/165": {
+    "match_status": "number_and_exact_name",
+    "name": "エリカの招待",
+    "printed_number": "206/165",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV2a-206",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV2a-206"
+  },
+  "070 091/071": {
+    "match_status": "number_and_exact_name",
+    "name": "ナンジャモ",
+    "printed_number": "091/071",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV2D-091",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV2D-091"
+  },
+  "071 101/078": {
+    "match_status": "number_and_exact_name",
+    "name": "サーナイトex",
+    "printed_number": "101/078",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV1S-101",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV1S-101"
+  },
+  "072 092/066": {
+    "match_status": "number_and_exact_name",
+    "name": "サザレ",
+    "printed_number": "092/066",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV5a-092",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV5a-092"
+  },
+  "073 093/066": {
+    "match_status": "number_and_exact_name",
+    "name": "スイレンのお世話",
+    "printed_number": "093/066",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV5a-093",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV5a-093"
+  },
+  "074 069/062": {
+    "match_status": "number_and_exact_name",
+    "name": "グラードン",
+    "printed_number": "069/062",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV3a-069",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV3a-069"
+  },
+  "075 085/062": {
+    "match_status": "number_and_exact_name",
+    "name": "ガブリアスex",
+    "printed_number": "085/062",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV3a-085",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV3a-085"
+  },
+  "076 204/165": {
+    "match_status": "number_and_exact_name",
+    "name": "サンダーex",
+    "printed_number": "204/165",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV2a-204",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV2a-204"
+  },
+  "077 202/165": {
+    "match_status": "number_and_exact_name",
+    "name": "カメックスex",
+    "printed_number": "202/165",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV2a-202",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV2a-202"
+  },
+  "078 200/165": {
+    "match_status": "number_and_exact_name",
+    "name": "フシギバナex",
+    "printed_number": "200/165",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV2a-200",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV2a-200"
+  },
+  "079 166/165": {
+    "match_status": "number_and_exact_name",
+    "name": "フシギダネ",
+    "printed_number": "166/165",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV2a-166",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV2a-166"
+  },
+  "080 131/106": {
+    "match_status": "number_and_exact_name",
+    "name": "ミロカロスex",
+    "printed_number": "131/106",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV8-131",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV8-131"
+  },
+  "081 133/106": {
+    "match_status": "number_and_exact_name",
+    "name": "サザンドラex",
+    "printed_number": "133/106",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV8-133",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV8-133"
+  },
+  "082 135/106": {
+    "match_status": "number_and_exact_name",
+    "name": "ミカンのまなざし",
+    "printed_number": "135/106",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV8-135",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV8-135"
+  },
+  "083 078/064": {
+    "match_status": "number_and_exact_name",
+    "name": "ラティアスex",
+    "printed_number": "078/064",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV7a-078",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV7a-078"
+  },
+  "084 091/064": {
+    "match_status": "number_and_exact_name",
+    "name": "ルチアのアピール",
+    "printed_number": "091/064",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV7a-091",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV7a-091"
+  },
+  "085 086/064": {
+    "match_status": "number_and_exact_name",
+    "name": "ルチアのアピール",
+    "printed_number": "086/064",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV7a-086",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV7a-086"
+  },
+  "088 089/064": {
+    "match_status": "number_and_exact_name",
+    "name": "キチキギスex",
+    "printed_number": "089/064",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV6a-089",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV6a-089"
+  },
+  "089 090/064": {
+    "match_status": "number_and_exact_name",
+    "name": "モモワロウex",
+    "printed_number": "090/064",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV6a-090",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV6a-090"
+  },
+  "090 091/064": {
+    "match_status": "number_and_exact_name",
+    "name": "カシオペア",
+    "printed_number": "091/064",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV6a-091",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV6a-091"
+  },
+  "091 130/098": {
+    "match_status": "number_and_exact_name",
+    "name": "ロケット団のミュウツーex",
+    "printed_number": "130/098",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV10-130",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV10-130"
+  },
+  "092 127/103": {
+    "match_status": "number_and_exact_name",
+    "name": "ピカチュウex",
+    "printed_number": "127/103",
+    "provider": "TCGdex",
+    "tcgdex_id": "M6a-127",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M6a-127"
+  },
+  "093 126/103": {
+    "match_status": "number_and_exact_name",
+    "name": "ピカチュウex",
+    "printed_number": "126/103",
+    "provider": "TCGdex",
+    "tcgdex_id": "M6a-126",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M6a-126"
+  },
+  "094 129/103": {
+    "match_status": "number_and_exact_name",
+    "name": "ミュウex",
+    "printed_number": "129/103",
+    "provider": "TCGdex",
+    "tcgdex_id": "M6a-129",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M6a-129"
+  },
+  "095 102/086": {
+    "match_status": "number_and_exact_name",
+    "name": "ミジュマル",
+    "printed_number": "102/086",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV11W-102",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV11W-102"
+  },
+  "096 111/080": {
+    "match_status": "number_and_exact_name",
+    "name": "オドリドリex",
+    "printed_number": "111/080",
+    "provider": "TCGdex",
+    "tcgdex_id": "M2-111",
+    "url": "https://api.tcgdex.net/v2/ja/cards/M2-111"
+  },
+  "097 350/190": {
+    "match_status": "number_and_exact_name",
+    "name": "ナンジャモ",
+    "printed_number": "350/190",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV4a-350",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV4a-350"
+  },
+  "098 127/100": {
+    "match_status": "number_and_exact_name",
+    "name": "Nのゾロアークex",
+    "printed_number": "127/100",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV9-127",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV9-127"
+  },
+  "099 125/100": {
+    "match_status": "number_and_exact_name",
+    "name": "ナンジャモのハラバリーex",
+    "printed_number": "125/100",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV9-125",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV9-125"
+  },
+  "100 126/100": {
+    "match_status": "number_and_exact_name",
+    "name": "リーリエのピッピex",
+    "printed_number": "126/100",
+    "provider": "TCGdex",
+    "tcgdex_id": "SV9-126",
+    "url": "https://api.tcgdex.net/v2/ja/cards/SV9-126"
+  }
+}

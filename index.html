@@ -42,7 +42,7 @@ header{display:flex;justify-content:space-between;gap:16px;align-items:center;fl
 <body><main>
 <header><div><div class="brand">POKÉ <em>WATCH</em></div><div class="subtitle">ポケカ相場ウォッチ | 通常・PSA10・価格推移</div></div><div class="subtitle" id="updated">最終更新：未取得</div></header>
 <section class="summary"><div class="metric"><span>登録カード</span><strong id="total">0 枚</strong></div><div class="metric"><span>通常価格を取得済み</span><strong id="rawcount">0 枚</strong></div><div class="metric"><span>PSA10価格を取得済み</span><strong id="psacount">0 枚</strong></div></section>
-<div class="notice"><strong>価格について：</strong>現在の通常価格は2026年11月17日に記録したショップ掲載参考値です。最新の売買成立価格や買取価格を示すものではありません。PSA10は未取得です。6時間ごとの自動実行では市場価格を収集していません。</div>
+<div class="notice"><strong>価格について：</strong>初回の通常価格は2026年11月17日に記録したショップ掲載参考値です。最新の売買成立価格や買取価格を示すものではありません。PSA10は未取得です。6時間ごとの自動実行では市場価格を収集していません。</div>
 <div class="toolbar"><input id="search" placeholder="カード名・カード番号で検索" aria-label="カード検索"><select id="filter" aria-label="表示するカード"><option value="all">すべてのカード</option><option value="raw">通常価格あり</option><option value="psa10">PSA10価格あり</option><option value="missing">価格未取得</option><option value="favorite">★ お気に入り</option></select><select id="sort" aria-label="並び替え"><option value="name">カード名順</option><option value="rawdesc">通常価格が高い順</option><option value="psadesc">PSA10価格が高い順</option><option value="rawasc">通常価格が安い順</option><option value="recent">記録日が新しい順</option></select><button id="export" class="btn" type="button">表示一覧をCSV保存</button></div>
 <div class="status" id="status">価格データを確認しています…</div><section class="cards" id="cards"></section>
 <dialog id="modal" class="modal" aria-label="カードの詳細"><div id="modalbody"></div></dialog><p class="foot">※掲載価格は入力・取得した記録であり、リアルタイム取引価格ではありません。価格の出典と更新日を確認してください。画像は許諾・利用条件が確認されたURLが登録された場合のみ表示します。</p>
@@ -50,7 +50,7 @@ header{display:flex;justify-content:space-between;gap:16px;align-items:center;fl
 <script>
 'use strict';
 const $=id=>document.getElementById(id);
-let cards=[],history=[],images={},favorites=new Set(),range=90,visibleRows=[];
+let cards=[],history=[],images={},catalog={},favorites=new Set(),range=90,visibleRows=[];
 try{favorites=new Set(JSON.parse(localStorage.getItem('pokewatch-favs')||'[]'))}catch(e){}
 const money=n=>Number.isFinite(n)?n.toLocaleString('ja-JP')+'円':'未取得';
 function elem(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e}
@@ -94,6 +94,10 @@ function marketLinks(c) {
  links.append(marketLink('メルカリ','https://jp.mercari.com/search?keyword='+term),
  marketLink('ヤフオク','https://auctions.yahoo.co.jp/search/search?p='+term),
  marketLink('スニダン','https://snkrdunk.com/search?keyword='+term));
+ const psaTerm=encodeURIComponent((c.name||'')+' '+c.card_id.split(' ').slice(1).join(' ')+' PSA10');
+ links.append(marketLink('PSA10を探す','https://jp.mercari.com/search?keyword='+psaTerm));
+ const match=catalog[c.card_id];
+ if(match && match.url && /^https:\/\/api\.tcgdex\.net\/v2\/ja\/cards\//.test(match.url))links.append(marketLink('カード情報',''+match.url));
  return links;
 }
 function trend(id,key,days=90){
@@ -189,14 +193,16 @@ async function fetchJson(p){const r=await fetch(p+'?v='+Date.now(),{cache:'no-st
 
 (async()=>{
  try{
- const [p,h,im]=await Promise.allSettled([
+ const [p,h,im,cat]=await Promise.allSettled([
    fetchJson('data/prices.json'),
    fetchJson('data/history.json'),
-   fetchJson('data/images.json')
+   fetchJson('data/images.json'),
+   fetchJson('data/catalog.json')
  ]);
  cards=p.status==='fulfilled'&&Array.isArray(p.value)?p.value:[];
  history=h.status==='fulfilled'&&Array.isArray(h.value)?h.value:[];
  images=im.status==='fulfilled'&&im.value&&typeof im.value==='object'&&!Array.isArray(im.value)?im.value:{};
+ catalog=cat.status==='fulfilled'&&cat.value&&typeof cat.value==='object'&&!Array.isArray(cat.value)?cat.value:{};
  $('total').textContent=cards.length+' 枚';
  $('rawcount').textContent=cards.filter(c=>Number.isFinite(c.raw_price)).length+' 枚';
  $('psacount').textContent=cards.filter(c=>Number.isFinite(c.psa10_price)).length+' 枚';

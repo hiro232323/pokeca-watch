@@ -11,25 +11,201 @@ header{display:flex;justify-content:space-between;gap:16px;align-items:center;fl
 .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.toolbar input,.toolbar select{min-height:43px;background:var(--panel);border:1px solid var(--line);border-radius:10px;color:var(--text);padding:0 13px}.toolbar input{flex:1;min-width:220px}.toolbar select{min-width:155px}
 .status{color:var(--sub);font-size:13px;margin:16px 0}.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:15px}.card{border:1px solid var(--line);border-radius:15px;padding:17px;background:var(--panel)}.top{display:flex;gap:12px;min-height:86px}.thumb{width:62px;height:86px;object-fit:contain;background:#101724;border:1px solid #354053;border-radius:7px}.placeholder{width:62px;height:86px;border-radius:7px;display:grid;place-items:center;background:#111b2a;color:#6d819c;font-size:11px;text-align:center}.card h2{font-size:17px;margin:2px 0 8px;overflow-wrap:anywhere}.id{font-size:12px;color:var(--sub)}.prices{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:15px 0}.price{padding:12px;background:#101724;border-radius:10px}.price span{color:var(--sub);font-size:11px}.price b{display:block;font-size:20px;margin-top:4px}.chart-title{color:var(--sub);font-size:12px;margin:9px 0 5px}.spark{width:100%;height:60px;background:#101724;border-radius:9px}.nohistory{height:60px;display:grid;place-items:center;color:var(--sub);background:#101724;border-radius:9px;font-size:12px}.links{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.links a{font-size:12px;padding:8px 10px;border-radius:8px;background:#283548;color:#dff7ff;text-decoration:none}.links a:hover{background:#38526c}.empty{padding:38px 16px;border:1px dashed #526078;border-radius:14px;text-align:center;color:var(--sub);line-height:1.9}.foot{color:var(--sub);font-size:12px;line-height:1.8;margin-top:30px}
 @media(max-width:550px){.summary{grid-template-columns:1fr 1fr}.metric:last-child{grid-column:span 2}.brand{font-size:24px}}
+
+/* v2 additions */
+.notice{padding:13px 16px;border:1px solid #33455a;border-radius:12px;background:#111a29;color:#b9cbe1;font-size:12px;line-height:1.8;margin:20px 0}
+.notice strong{color:#e9f9fa}
+.toolbar .btn,.btn{background:#243449;border:1px solid #41536b;color:#e8f2ff;border-radius:10px;padding:10px 14px;cursor:pointer;font:inherit;font-size:13px}
+.btn:hover{background:#34506a}.toolbar select{min-width:145px}
+.card{position:relative;transition:border-color .15s}.card:hover{border-color:#5d748a}
+.card .fav{position:absolute;top:10px;right:10px;border:0;background:#253449;color:#c8d8ec;border-radius:100%;font-size:21px;width:36px;height:36px;cursor:pointer;z-index:1}
+.card .fav.active{color:#ffd16a}.card h2{padding-right:20px}.placeholder{font-size:25px;color:#86c6cf;border:1px solid #2c4855}
+.card .tiny{font-size:11px;color:var(--sub);line-height:1.5;margin-top:8px}
+.chartcontrols{display:flex;gap:6px;margin:6px 0 10px;flex-wrap:wrap}
+.chartcontrols button{background:#142233;color:#aebdd0;border:1px solid #34465d;font-size:11px;border-radius:6px;padding:5px 8px;cursor:pointer}
+.chartcontrols button.active{background:#236065;color:white}
+.spark{height:100px}.nohistory{height:100px;padding:10px;text-align:center;line-height:1.5}
+.trend{font-size:12px;margin:9px 0;color:#b6c5d9}
+.trend.up{color:#80e0b4}.trend.down{color:#ff9d9d}
+.detailbtn{width:100%;margin-top:12px}
+.modal{border:1px solid #547088;background:#101929;color:#f4f7ff;border-radius:18px;padding:24px;max-width:660px;width:calc(100% - 28px);max-height:90vh;overflow:auto;box-shadow:0 20px 70px #0008}
+.modal::backdrop{background:#010915c7}.modalheader{display:flex;align-items:flex-start;justify-content:space-between;gap:15px}
+.modal h2{font-size:21px}.modal .close{border:0;background:#26384f;color:white;padding:8px 12px;border-radius:8px;cursor:pointer}
+.detailrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}.detailrow>div{background:#192538;border-radius:10px;padding:14px}
+.detailrow strong{display:block;font-size:22px;margin-top:6px}
+.detailcanvas{width:100%;height:auto;background:#111f30;border-radius:12px}
+.modal a{color:#7bd9d0}.hoverable:hover{transform:scale(1.8);transform-origin:top left;position:relative;z-index:8;box-shadow:0 7px 25px #000b}
+@media(max-width:650px){main{padding:18px 12px 60px}.summary{gap:8px}.metric{padding:12px}.metric strong{font-size:22px}.toolbar input{width:100%}.detailrow{grid-template-columns:1fr 1fr}}
+
 </style>
 </head>
 <body><main>
 <header><div><div class="brand">POKÉ <em>WATCH</em></div><div class="subtitle">ポケカ相場ウォッチ | 通常・PSA10・価格推移</div></div><div class="subtitle" id="updated">最終更新：未取得</div></header>
 <section class="summary"><div class="metric"><span>登録カード</span><strong id="total">0 枚</strong></div><div class="metric"><span>通常価格を取得済み</span><strong id="rawcount">0 枚</strong></div><div class="metric"><span>PSA10価格を取得済み</span><strong id="psacount">0 枚</strong></div></section>
-<div class="toolbar"><input id="search" placeholder="カード名・カード番号で検索" aria-label="カード検索"><select id="filter" aria-label="表示するカード"><option value="all">すべてのカード</option><option value="raw">通常価格あり</option><option value="psa10">PSA10価格あり</option><option value="missing">価格未取得</option></select><select id="sort" aria-label="並び替え"><option value="name">カード名順</option><option value="rawdesc">通常価格が高い順</option><option value="psadesc">PSA10価格が高い順</option></select></div>
+<div class="notice"><strong>価格について：</strong>現在の通常価格は2026年11月17日に記録したショップ掲載参考値です。最新の売買成立価格や買取価格を示すものではありません。PSA10は未取得です。6時間ごとの自動実行では市場価格を収集していません。</div>
+<div class="toolbar"><input id="search" placeholder="カード名・カード番号で検索" aria-label="カード検索"><select id="filter" aria-label="表示するカード"><option value="all">すべてのカード</option><option value="raw">通常価格あり</option><option value="psa10">PSA10価格あり</option><option value="missing">価格未取得</option><option value="favorite">★ お気に入り</option></select><select id="sort" aria-label="並び替え"><option value="name">カード名順</option><option value="rawdesc">通常価格が高い順</option><option value="psadesc">PSA10価格が高い順</option><option value="rawasc">通常価格が安い順</option><option value="recent">記録日が新しい順</option></select><button id="export" class="btn" type="button">表示一覧をCSV保存</button></div>
 <div class="status" id="status">価格データを確認しています…</div><section class="cards" id="cards"></section>
-<p class="foot">※掲載価格は入力・取得した記録であり、リアルタイム取引価格ではありません。価格の出典と更新日を確認してください。画像は許諾・利用条件が確認されたURLが登録された場合のみ表示します。</p>
+<dialog id="modal" class="modal" aria-label="カードの詳細"><div id="modalbody"></div></dialog><p class="foot">※掲載価格は入力・取得した記録であり、リアルタイム取引価格ではありません。価格の出典と更新日を確認してください。画像は許諾・利用条件が確認されたURLが登録された場合のみ表示します。</p>
 </main>
 <script>
 'use strict';
 const $=id=>document.getElementById(id);
-let cards=[],history=[];
+let cards=[],history=[],images={},favorites=new Set(),range=90,visibleRows=[];
+try{favorites=new Set(JSON.parse(localStorage.getItem('pokewatch-favs')||'[]'))}catch(e){}
 const money=n=>Number.isFinite(n)?n.toLocaleString('ja-JP')+'円':'未取得';
 function elem(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e}
-function spark(entries){const pts=entries.filter(x=>Number.isFinite(x.raw_price)).sort((a,b)=>a.date.localeCompare(b.date));if(pts.length<2)return elem('div','nohistory','価格履歴が2件以上になるとグラフを表示');const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 260 60');svg.setAttribute('class','spark');svg.setAttribute('role','img');svg.setAttribute('aria-label','通常価格の推移');const vals=pts.map(p=>p.raw_price),min=Math.min(...vals),max=Math.max(...vals),spread=max-min||1;const path=document.createElementNS('http://www.w3.org/2000/svg','polyline');path.setAttribute('points',vals.map((n,i)=>(8+i*244/(vals.length-1)).toFixed(2)+','+(51-(n-min)/spread*42).toFixed(2)).join(' '));path.setAttribute('stroke','#7bd9d0');path.setAttribute('stroke-width','2.5');path.setAttribute('fill','none');svg.append(path);return svg}
+
+function observations(id,key,days=0) {
+  const all=history.filter(x=>x.card_id===id && Number.isFinite(x[key]))
+    .sort((a,b)=>a.date.localeCompare(b.date));
+  const dedup=new Map();
+  for(const x of all) dedup.set(x.date,x);
+  const arr=[...dedup.values()];
+  if(!days) return arr;
+  if(!arr.length) return [];
+  const last=new Date(arr.at(-1).date+'T00:00:00Z');
+  const cutoff=new Date(last.getTime()-days*86400000);
+  return arr.filter(x=>new Date(x.date+'T00:00:00Z')>=cutoff);
+}
+function svgChart(pts,key,width=300,height=100) {
+  if(pts.length<2) return elem('div','nohistory',
+    pts.length===1?'初回価格を記録済み。2つ目の異なる日付の価格が入ると推移を表示します。':'価格履歴はまだありません。');
+  const sv=document.createElementNS('http://www.w3.org/2000/svg','svg');
+  sv.setAttribute('viewBox',`0 0 ${width} ${height}`);
+  sv.setAttribute('class','spark detailcanvas');
+  sv.setAttribute('role','img');
+  sv.setAttribute('aria-label','価格推移');
+  const vals=pts.map(x=>x[key]),min=Math.min(...vals),max=Math.max(...vals);
+  const pad=Math.max((max-min)*.12,max*.02,1),low=min-pad,high=max+pad;
+  const x=i=>12+i*(width-24)/(pts.length-1);
+  const y=n=>height-14-(n-low)/(high-low)*(height-28);
+  const line=document.createElementNS('http://www.w3.org/2000/svg','polyline');
+  line.setAttribute('points',vals.map((v,i)=>`${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' '));
+  line.setAttribute('stroke','#7bd9d0');line.setAttribute('fill','none');line.setAttribute('stroke-width','2.5');
+  line.setAttribute('stroke-linecap','round');line.setAttribute('stroke-linejoin','round');sv.append(line);
+  const first=pts[0],last=pts.at(-1);
+  const ttl=document.createElementNS('http://www.w3.org/2000/svg','title');
+  ttl.textContent=`${first.date} ${money(first[key])} → ${last.date} ${money(last[key])}`;sv.append(ttl);
+  return sv;
+}
 function marketLink(label,url){const a=elem('a','',label+' ↗');a.href=url;a.target='_blank';a.rel='noopener noreferrer';return a}
-function render(){const q=$('search').value.toLocaleLowerCase('ja'),f=$('filter').value,s=$('sort').value;let rows=cards.filter(c=>((c.name||'')+' '+c.card_id).toLocaleLowerCase('ja').includes(q)).filter(c=>f==='all'||(f==='raw'&&Number.isFinite(c.raw_price))||(f==='psa10'&&Number.isFinite(c.psa10_price))||(f==='missing'&&!Number.isFinite(c.raw_price)&&!Number.isFinite(c.psa10_price)));if(s==='rawdesc')rows.sort((a,b)=>(b.raw_price??-1)-(a.raw_price??-1));else if(s==='psadesc')rows.sort((a,b)=>(b.psa10_price??-1)-(a.psa10_price??-1));else rows.sort((a,b)=>(a.name||'').localeCompare(b.name||'','ja'));$('status').textContent=rows.length+' 件を表示';const wrap=$('cards');wrap.replaceChildren();if(!rows.length){const m=elem('div','empty',cards.length?'条件に一致するカードはありません。':'カードデータはまだありません。\n最初に data/price_updates.csv に確認済みの価格情報を登録してください。');m.style.whiteSpace='pre-line';wrap.append(m);return}for(const c of rows){const article=elem('article','card'),top=elem('div','top');if(typeof c.image_url==='string'&&/^https:\/\//.test(c.image_url)){const img=elem('img','thumb');img.src=c.image_url;img.alt=c.name||'カード画像';img.loading='lazy';img.onerror=()=>img.replaceWith(elem('div','placeholder','画像なし'));top.append(img)}else top.append(elem('div','placeholder','画像なし'));const head=elem('div');head.append(elem('h2','',c.name||'名称未登録'),elem('div','id',c.card_id));top.append(head);article.append(top);const prices=elem('div','prices');for(const [label,key] of [['通常価格','raw_price'],['PSA10','psa10_price']]){const box=elem('div','price');box.append(elem('span','',label),elem('b','',money(c[key])));prices.append(box)}article.append(prices,elem('div','chart-title','通常価格の推移'));article.append(spark(history.filter(h=>h.card_id===c.card_id)));const links=elem('div','links'),term=encodeURIComponent((c.name||'')+' '+c.card_id);links.append(marketLink('メルカリ','https://jp.mercari.com/search?keyword='+term),marketLink('ヤフオク','https://auctions.yahoo.co.jp/search/search?p='+term),marketLink('スニダン','https://snkrdunk.com/search?keyword='+term));article.append(links);wrap.append(article)}}
+function marketLinks(c) {
+ const links=elem('div','links'),term=encodeURIComponent((c.name||'')+' '+c.card_id);
+ links.append(marketLink('メルカリ','https://jp.mercari.com/search?keyword='+term),
+ marketLink('ヤフオク','https://auctions.yahoo.co.jp/search/search?p='+term),
+ marketLink('スニダン','https://snkrdunk.com/search?keyword='+term));
+ return links;
+}
+function trend(id,key,days=90){
+ const arr=observations(id,key,days);
+ if(arr.length<2)return elem('div','trend','比較可能な価格履歴はまだありません');
+ const before=arr[0][key],after=arr.at(-1)[key],diff=after-before;
+ const pct=before>0?` (${diff>=0?'+':''}${(100*diff/before).toFixed(1)}%)`:'';
+ return elem('div','trend '+(diff>0?'up':diff<0?'down':''),`${diff>0?'▲':diff<0?'▼':'＝'} ${diff>=0?'+':''}${diff.toLocaleString('ja-JP')}円${pct} / ${arr.length}日分の記録`);
+}
+function imageNode(c){
+ const url=images[c.card_id] || c.image_url;
+ if(typeof url==='string' && /^https:\/\//i.test(url)){
+   const img=elem('img','thumb hoverable');img.src=url;img.alt=c.name||'カード画像';img.loading='lazy';
+   img.onerror=()=>img.replaceWith(elem('div','placeholder','◇'));
+   return img;
+ }
+ const mark=elem('div','placeholder','◇');
+ mark.title='利用許諾が確認された画像URLのみ表示します';
+ return mark;
+}
+function detail(c){
+ const body=$('modalbody');body.replaceChildren();
+ const head=elem('div','modalheader'),left=elem('div');
+ left.append(elem('h2','',c.name),elem('div','id',c.card_id));
+ const close=elem('button','close','閉じる');close.onclick=()=> $('modal').close();head.append(left,close);body.append(head);
+ const info=elem('div','detailrow');
+ for(const [label,key] of [['通常参考価格','raw_price'],['PSA10参考価格','psa10_price']]){
+  const p=elem('div');p.append(elem('div','subtitle',label),elem('strong','',money(c[key])));info.append(p);
+ }
+ body.append(info);
+ const buttons=elem('div','chartcontrols');
+ for(const [d,label] of [[30,'30日'],[90,'90日'],[365,'1年'],[0,'全期間']]){
+  const b=elem('button',d===range?'active':'',label);b.onclick=()=>{range=d;detail(c)};buttons.append(b);
+ }
+ body.append(elem('h3','','通常参考価格の推移'),buttons);
+ const entries=observations(c.card_id,'raw_price',range);
+ body.append(svgChart(entries,'raw_price',600,190));
+ body.append(trend(c.card_id,'raw_price',range));
+ const list=elem('div','tiny','記録履歴（直近10件）');body.append(list);
+ for(const h of observations(c.card_id,'raw_price').slice(-10).reverse()){
+  const l=elem('div','tiny',`${h.date}：${money(h.raw_price)} / ${h.source||'出典なし'}`);body.append(l);
+ }
+ body.append(marketLinks(c));
+ $('modal').showModal();
+}
+function filtered(){
+ const q=$('search').value.toLocaleLowerCase('ja').trim(),f=$('filter').value,s=$('sort').value;
+ let rows=cards.filter(c=>((c.name||'')+' '+c.card_id).toLocaleLowerCase('ja').includes(q))
+ .filter(c=>f==='all'||(f==='raw'&&Number.isFinite(c.raw_price))||(f==='psa10'&&Number.isFinite(c.psa10_price))||
+ (f==='missing'&&!Number.isFinite(c.raw_price)&&!Number.isFinite(c.psa10_price))||(f==='favorite'&&favorites.has(c.card_id)));
+ if(s==='rawdesc')rows.sort((a,b)=>(b.raw_price??-1)-(a.raw_price??-1));
+ else if(s==='rawasc')rows.sort((a,b)=>(a.raw_price??Infinity)-(b.raw_price??Infinity));
+ else if(s==='psadesc')rows.sort((a,b)=>(b.psa10_price??-1)-(a.psa10_price??-1));
+ else if(s==='recent')rows.sort((a,b)=>(b.raw_date||'').localeCompare(a.raw_date||''));
+ else rows.sort((a,b)=>(a.name||'').localeCompare(b.name||'','ja'));
+ return rows;
+}
+function render(){
+ visibleRows=filtered();$('status').textContent=visibleRows.length+' 件を表示（★お気に入り '+favorites.size+'件）';
+ const wrap=$('cards');wrap.replaceChildren();
+ if(!visibleRows.length){const m=elem('div','empty',cards.length?'条件に一致するカードはありません。':'カードデータを読み込めません。');wrap.append(m);return;}
+ for(const c of visibleRows){
+  const article=elem('article','card');
+  const fav=elem('button','fav'+(favorites.has(c.card_id)?' active':''),favorites.has(c.card_id)?'★':'☆');
+  fav.title='お気に入りに登録／解除';fav.setAttribute('aria-label','お気に入りに登録または解除');
+  fav.onclick=()=>{favorites.has(c.card_id)?favorites.delete(c.card_id):favorites.add(c.card_id);try{localStorage.setItem('pokewatch-favs',JSON.stringify([...favorites]))}catch(e){}render()};
+  article.append(fav);
+  const top=elem('div','top');top.append(imageNode(c));
+  const head=elem('div');head.append(elem('h2','',c.name||'名称未登録'),elem('div','id',c.card_id));
+  top.append(head);article.append(top);
+  const prices=elem('div','prices');
+  for(const [label,key] of [['通常参考価格','raw_price'],['PSA10','psa10_price']]){
+   const box=elem('div','price');box.append(elem('span','',label),elem('b','',money(c[key])));prices.append(box);
+  }
+  article.append(prices,elem('div','chart-title','価格推移（直近90日）'));
+  article.append(svgChart(observations(c.card_id,'raw_price',90),'raw_price'));
+  article.append(trend(c.card_id,'raw_price',90));
+  const last=history.filter(h=>h.card_id===c.card_id).at(-1);
+  if(last) article.append(elem('div','tiny',`記録日：${last.date} / 出典：${last.source||'未記載'}`));
+  article.append(marketLinks(c));
+  const btn=elem('button','btn detailbtn','価格履歴の詳細を見る');btn.onclick=()=>detail(c);article.append(btn);
+  wrap.append(article);
+ }
+}
+function exportCSV(){
+ const fields=['card_id','name','raw_price','psa10_price','raw_date','psa10_date'];
+ const quote=v=>'"'+String(v??'').replace(/"/g,'""')+'"';
+ const csv='\ufeff'+fields.join(',')+'\r\n'+visibleRows.map(c=>fields.map(k=>quote(c[k])).join(',')).join('\r\n');
+ const blob=new Blob([csv],{type:'text/csv;charset=utf-8'});
+ const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='pokewatch_cards.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
 async function fetchJson(p){const r=await fetch(p+'?v='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error(r.status);return r.json()}
-(async()=>{try{const [p,h]=await Promise.allSettled([fetchJson('data/prices.json'),fetchJson('data/history.json')]);cards=p.status==='fulfilled'&&Array.isArray(p.value)?p.value:[];history=h.status==='fulfilled'&&Array.isArray(h.value)?h.value:[];$('total').textContent=cards.length+' 枚';$('rawcount').textContent=cards.filter(c=>Number.isFinite(c.raw_price)).length+' 枚';$('psacount').textContent=cards.filter(c=>Number.isFinite(c.psa10_price)).length+' 枚';const dates=history.map(x=>x.date).filter(Boolean).sort();if(dates.length)$('updated').textContent='最終記録日：'+dates.at(-1);render()}catch(e){$('status').textContent='データを読み込めませんでした。';console.error(e)}})();
+
+(async()=>{
+ try{
+ const [p,h,im]=await Promise.allSettled([
+   fetchJson('data/prices.json'),
+   fetchJson('data/history.json'),
+   fetchJson('data/images.json')
+ ]);
+ cards=p.status==='fulfilled'&&Array.isArray(p.value)?p.value:[];
+ history=h.status==='fulfilled'&&Array.isArray(h.value)?h.value:[];
+ images=im.status==='fulfilled'&&im.value&&typeof im.value==='object'&&!Array.isArray(im.value)?im.value:{};
+ $('total').textContent=cards.length+' 枚';
+ $('rawcount').textContent=cards.filter(c=>Number.isFinite(c.raw_price)).length+' 枚';
+ $('psacount').textContent=cards.filter(c=>Number.isFinite(c.psa10_price)).length+' 枚';
+ const dates=history.map(x=>x.date).filter(Boolean).sort();
+ if(dates.length)$('updated').textContent='最終記録日：'+dates.at(-1);
+ render();
+ }catch(e){$('status').textContent='データを読み込めませんでした';console.error(e)}
+})();
 for(const id of ['search','filter','sort'])$(id).addEventListener(id==='search'?'input':'change',render);
+$('export').addEventListener('click',exportCSV);
+$('modal').addEventListener('click',e=>{if(e.target===$('modal'))$('modal').close()});
 </script></body></html>

@@ -1,4 +1,3 @@
-
 name: Pokemon Card Price Update
 
 on:
@@ -9,27 +8,31 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: pokewatch-price-update
+  cancel-in-progress: false
+
 jobs:
   update-prices:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Update card prices
+      - name: Import authorized price feed (if configured)
+        env:
+          POKEWATCH_FEED_URL: ${{ vars.POKEWATCH_FEED_URL }}
+          POKEWATCH_FEED_TOKEN: ${{ secrets.POKEWATCH_FEED_TOKEN }}
+        run: python3 scripts/import_price_feed.py
+      - name: Generate price history and current prices
+        run: python3 scripts/update_prices.py
+      - name: Commit only changed price records
         run: |
-          if [ -f scripts/update_prices.py ]; then
-            python3 scripts/update_prices.py
-          else
-            echo "Price update script is not configured yet."
-          fi
-
-      - name: Save updated data
-        run: |
-          if [ -n "$(git status --porcelain)" ]; then
+          if [ -n "$(git status --porcelain -- data/price_updates.csv data/prices.json data/history.json)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add -A
-            git commit -m "Update card prices"
+            git add data/price_updates.csv data/prices.json data/history.json
+            git commit -m "Update verified card price records"
             git push
+          else
+            echo "No new verified prices; existing records preserved."
           fi

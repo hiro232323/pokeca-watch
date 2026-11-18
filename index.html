@@ -49,6 +49,23 @@ header{display:flex;justify-content:space-between;gap:16px;align-items:center;fl
 .lab-table{overflow:auto;margin-top:14px}.lab table{width:100%;border-collapse:collapse;min-width:640px;font-size:12px}.lab td,.lab th{text-align:left;padding:10px;border-bottom:1px solid #31445b}.lab th{color:#aec6dc}
 .lab-note{font-size:12px;color:#bdccdd;margin-top:12px}.lab-danger{color:#ffb6a8}.lab-green{color:#88e3ba}
 @media(max-width:650px){.lab{padding:14px}.lab-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* v6: 30-day verification panels */
+.verify{margin:24px 0;padding:22px;background:#151f2e;border:1px solid #395066;border-radius:16px}
+.verify h2{margin:0 0 8px;font-size:20px}
+.verify p{font-size:13px;line-height:1.85;color:#b4c4da}
+.verify-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:16px 0}
+.verify label{display:block;color:#bdcee5;font-size:12px;margin-bottom:6px}
+.verify input,.verify select{width:100%;background:#0d1726;color:#f4f8ff;border:1px solid #41546a;border-radius:8px;padding:10px}
+.verify button{margin:4px 6px 4px 0}
+.verify-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:16px 0}
+.verify-stats>div{background:#0b1625;border-radius:10px;padding:12px}
+.verify-stats span{display:block;color:#b1bed0;font-size:11px}
+.verify-stats strong{display:block;font-size:20px;margin-top:6px}
+.verify-table{overflow-x:auto;max-height:300px}
+.verify table{width:100%;border-collapse:collapse;min-width:590px;font-size:12px}
+.verify th,.verify td{text-align:left;padding:9px 8px;border-bottom:1px solid #344456}
+.verify .muted{font-size:11px;color:#9dadbe}
 </style>
 </head>
 <body><main>
@@ -84,6 +101,47 @@ header{display:flex;justify-content:space-between;gap:16px;align-items:center;fl
 <p>今のサイトには広告・アフィリエイト・アクセス解析が未接続なので、収益は0円（計測未開始）です。まず30日間で検索流入・利用者数・クリック数・収益の実測値を集め、続けるか判断します。</p>
 <div class="lab-grid"><div class="lab-stat"><span>広告 / 紹介収入</span><b>未計測</b></div><div class="lab-stat"><span>訪問者数</span><b>未計測</b></div><div class="lab-stat"><span>月5万円達成</span><b>未達</b></div></div>
 <p class="lab-note">他社サイトへの検索リンクは成果報酬リンクではありません。利用条件の確認前に自動収集や無断転載は行いません。</p>
+</section>
+
+<section class="verify" id="forward-test">
+<h2>① 先読みなしの仮想売買検証</h2>
+<p>予測した時点の仮仕入れ価格を記録し、後日確認した売却可能価格で検証します。上の利益シミュレーターは将来の売却を保証しません。結果が出るまでは「未決済」です。</p>
+<div class="verify-grid">
+  <div><label for="ft-card">対象カード</label><select id="ft-card"></select></div>
+  <div><label for="ft-buy">仮仕入価格（円）</label><input id="ft-buy" type="number" min="1" placeholder="当日確認した価格"></div>
+  <div><label for="ft-fee">販売手数料（%）</label><input id="ft-fee" type="number" min="0" max="99" value="10" step=".1"></div>
+  <div><label for="ft-ship">送料＋その他（円）</label><input id="ft-ship" type="number" min="0" value="230"></div>
+</div>
+<button type="button" class="btn" id="ft-open">今日の予測を記録</button>
+<button type="button" class="btn" id="ft-export">検証記録をCSV保存</button>
+<div class="verify-stats">
+<div><span>未決済</span><strong id="ft-open-count">0件</strong></div>
+<div><span>検証済み</span><strong id="ft-closed-count">0件</strong></div>
+<div><span>検証済みの損益合計</span><strong id="ft-total">0円</strong></div>
+<div><span>勝率（検証済み）</span><strong id="ft-winrate">—</strong></div>
+</div>
+<div class="verify-table"><table><thead><tr><th>登録日／対象カード</th><th>仮仕入価格</th><th>後日確認価格</th><th>手数料後損益</th><th>操作</th></tr></thead><tbody id="ft-history"></tbody></table></div>
+<p class="muted">後日価格は実際に確認した売却可能価格を入力してください。公開中のショップ掲載参考値を自動的に売却価格にはしません。記録はこのブラウザにのみ保存されます。</p>
+</section>
+<section class="verify" id="revenue-check">
+<h2>② サイト収益の30日検証</h2>
+<p>無料サイトの利用状況を日別に入力して記録します。今はアクセス解析や広告収益サービスと接続していないため、数字は自動収集されません。計測できるようになるまで空欄のままにしてください。</p>
+<div class="verify-grid">
+  <div><label for="rv-day">記録日</label><input id="rv-day" type="date"></div>
+  <div><label for="rv-visits">実測訪問者数</label><input id="rv-visits" type="number" min="0" placeholder="計測できたら入力"></div>
+  <div><label for="rv-clicks">実測リンククリック数</label><input id="rv-clicks" type="number" min="0" placeholder="計測できたら入力"></div>
+  <div><label for="rv-yen">実際の広告・紹介収入（円）</label><input id="rv-yen" type="number" min="0" placeholder="実際の入金・確定額"></div>
+</div>
+<button type="button" class="btn" id="rv-save">この日の実績を保存</button>
+<button type="button" class="btn" id="rv-export">サイト実績をCSV保存</button>
+<div class="verify-stats">
+<div><span>計測した日数</span><strong id="rv-days">0日</strong></div>
+<div><span>記録された訪問者</span><strong id="rv-visits-total">未計測</strong></div>
+<div><span>記録されたクリック</span><strong id="rv-clicks-total">未計測</strong></div>
+<div><span>記録された収益</span><strong id="rv-revenue-total">未計測</strong></div>
+</div>
+<div class="verify-table"><table><thead><tr><th>日付</th><th>訪問者</th><th>クリック</th><th>収益</th><th>操作</th></tr></thead><tbody id="rv-history"></tbody></table></div>
+<p class="muted">未入力は0件ではなく「未計測」です。記録値は自己申告であり、サイト全体の自動解析結果ではありません。</p>
 </section>
 <div class="toolbar"><input id="search" placeholder="カード名・カード番号で検索" aria-label="カード検索"><select id="filter" aria-label="表示するカード"><option value="all">すべてのカード</option><option value="raw">通常価格あり</option><option value="psa10">PSA10価格あり</option><option value="missing">価格未取得</option><option value="favorite">★ お気に入り</option></select><select id="sort" aria-label="並び替え"><option value="name">カード名順</option><option value="rawdesc">通常価格が高い順</option><option value="psadesc">PSA10価格が高い順</option><option value="rawasc">通常価格が安い順</option><option value="recent">記録日が新しい順</option></select><button id="export" class="btn" type="button">表示一覧をCSV保存</button></div>
 <div class="status" id="status">価格データを確認しています…</div><section class="cards" id="cards"></section>
@@ -243,7 +301,7 @@ async function fetchJson(p){const r=await fetch(p+'?v='+Date.now(),{cache:'no-st
    fetchJson('data/catalog.json')
  ]);
  cards=p.status==='fulfilled'&&Array.isArray(p.value)?p.value:[];
- populateTradeCards();
+ populateTradeCards();initForwardCards();
  history=h.status==='fulfilled'&&Array.isArray(h.value)?h.value:[];
  images=im.status==='fulfilled'&&im.value&&typeof im.value==='object'&&!Array.isArray(im.value)?im.value:{};
  catalog=cat.status==='fulfilled'&&cat.value&&typeof cat.value==='object'&&!Array.isArray(cat.value)?cat.value:{};
@@ -314,4 +372,102 @@ $('lab-export').onclick=exportTrades;
 $('lab-clear').onclick=()=>{if(confirm('この端末に保存した仮想取引をすべて削除しますか？（事前のCSV保存を推奨）')){paperTrades=[];saveTrades();renderTrades()}};
 renderTrades();calculate();
 
+
+// v6 30-day verification (browser-local, independent from price feed)
+function verifyRead(key){
+ try{const rows=JSON.parse(localStorage.getItem(key)||'[]');return Array.isArray(rows)?rows.slice(-1000):[]}catch(e){return []}
+}
+function verifySave(key,rows){
+ try{localStorage.setItem(key,JSON.stringify(rows))}catch(e){alert('ブラウザに保存できません。CSVでバックアップしてください。')}
+}
+function verifyCsv(name,rows,keys){
+ const output='\ufeff'+keys.join(',')+'\r\n'+rows.map(x=>keys.map(k=>csvCell(x[k])).join(',')).join('\r\n');
+ downloadText(name,output);
+}
+const ftKey='pokewatch-forward-v1',rvKey='pokewatch-revenue-v1';
+let forwardRows=verifyRead(ftKey), revenueRows=verifyRead(rvKey);
+function initForwardCards(){
+ const select=$('ft-card');select.replaceChildren();
+ for(const c of cards){const option=elem('option','',`${c.name} / ${c.card_id}`);option.value=c.card_id;select.append(option)}
+}
+function formatYen(n){return Number.isFinite(n)?Math.round(n).toLocaleString('ja-JP')+'円':'—'}
+function renderForward(){
+ const body=$('ft-history');body.replaceChildren();
+ let settled=0,open=0,net=0,wins=0;
+ for(const row of [...forwardRows].reverse()){
+   const done=Number.isFinite(row.sell);
+   if(done){settled++;const p=profitCalc(row.buy,row.sell,row.fee,row.cost,0);if(p){net+=p.profit;if(p.profit>0)wins++}}
+   else open++;
+   const tr=elem('tr');
+   const profit=done?profitCalc(row.buy,row.sell,row.fee,row.cost,0):null;
+   for(const value of [row.date+' / '+row.name,formatYen(row.buy),done?formatYen(row.sell):'未決済',profit?formatYen(profit.profit):'—']){
+     tr.append(elem('td','',value));
+   }
+   const action=elem('td');
+   if(!done){
+     const settle=elem('button','btn','後日価格を記録');
+     settle.onclick=()=>{
+       const value=prompt('後日確認した売却可能価格（円）を入力してください。参考相場をそのまま使わないでください。');
+       if(value===null)return;
+       const n=Number(value);
+       if(!Number.isSafeInteger(n)||n<=0){alert('正しい価格を入力してください。');return}
+       if(!confirm('この価格は後日確認した価格ですか？'))return;
+       row.sell=n;row.closed=new Date().toLocaleDateString('sv-SE');verifySave(ftKey,forwardRows);renderForward()
+     };
+     action.append(settle);
+   }
+   const del=elem('button','btn','削除');
+   del.onclick=()=>{if(!confirm('この検証記録を削除しますか？'))return;forwardRows=forwardRows.filter(x=>x.id!==row.id);verifySave(ftKey,forwardRows);renderForward()};
+   action.append(del);tr.append(action);body.append(tr);
+ }
+ if(!forwardRows.length){const tr=elem('tr'),td=elem('td','','まだ記録がありません');td.colSpan=5;tr.append(td);body.append(tr)}
+ $('ft-open-count').textContent=open+'件';
+ $('ft-closed-count').textContent=settled+'件';
+ $('ft-total').textContent=settled?formatYen(net):'—';
+ $('ft-winrate').textContent=settled?(100*wins/settled).toFixed(1)+'%':'—';
+}
+$('ft-open').onclick=()=>{
+ const id=$('ft-card').value,c=cards.find(x=>x.card_id===id);
+ const buy=Number($('ft-buy').value),fee=Number($('ft-fee').value),cost=Number($('ft-ship').value);
+ if(!c||!Number.isSafeInteger(buy)||buy<=0||!Number.isFinite(fee)||fee<0||fee>=100||!Number.isSafeInteger(cost)||cost<0){alert('カード・仮仕入価格・手数料・送料を確認してください');return}
+ forwardRows.push({id:Date.now()+'-'+Math.random().toString(36).slice(2),date:new Date().toLocaleDateString('sv-SE'),card_id:id,name:c.name,buy,fee,cost,sell:null,closed:null});
+ verifySave(ftKey,forwardRows);renderForward();
+};
+$('ft-export').onclick=()=>verifyCsv('pokewatch_forward_test.csv',forwardRows,['date','card_id','name','buy','fee','cost','sell','closed']);
+function optionalInt(id){
+ const t=$(id).value.trim();if(!t)return null;
+ const n=Number(t);return Number.isSafeInteger(n)&&n>=0?n:NaN;
+}
+function renderRevenue(){
+ const body=$('rv-history');body.replaceChildren();
+ let visits=0,clicks=0,earn=0,nvis=0,nclick=0,nearn=0;
+ for(const r of revenueRows){
+  if(Number.isFinite(r.visits)){visits+=r.visits;nvis++}
+  if(Number.isFinite(r.clicks)){clicks+=r.clicks;nclick++}
+  if(Number.isFinite(r.yen)){earn+=r.yen;nearn++}
+ }
+ $('rv-days').textContent=revenueRows.length+'日';
+ $('rv-visits-total').textContent=nvis?visits.toLocaleString('ja-JP')+'人':'未計測';
+ $('rv-clicks-total').textContent=nclick?clicks.toLocaleString('ja-JP')+'件':'未計測';
+ $('rv-revenue-total').textContent=nearn?formatYen(earn):'未計測';
+ for(const r of [...revenueRows].sort((a,b)=>b.day.localeCompare(a.day))){
+  const tr=elem('tr');
+  for(const value of [r.day,r.visits??'未計測',r.clicks??'未計測',r.yen===null?'未計測':formatYen(r.yen)])tr.append(elem('td','',String(value)));
+  const action=elem('td'),del=elem('button','btn','削除');
+  del.onclick=()=>{revenueRows=revenueRows.filter(x=>x.day!==r.day);verifySave(rvKey,revenueRows);renderRevenue()};
+  action.append(del);tr.append(action);body.append(tr)
+ }
+ if(!revenueRows.length){const tr=elem('tr'),td=elem('td','','計測データはまだありません');td.colSpan=5;tr.append(td);body.append(tr)}
+}
+$('rv-day').value=new Date().toLocaleDateString('sv-SE');
+$('rv-save').onclick=()=>{
+ const day=$('rv-day').value;
+ const visits=optionalInt('rv-visits'),clicks=optionalInt('rv-clicks'),yen=optionalInt('rv-yen');
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(day)||[visits,clicks,yen].some(x=>Number.isNaN(x))||(visits===null&&clicks===null&&yen===null)){alert('日付と、実際に計測した数字を1つ以上入力してください');return}
+ revenueRows=revenueRows.filter(x=>x.day!==day);
+ revenueRows.push({day,visits,clicks,yen});
+ verifySave(rvKey,revenueRows);renderRevenue()
+};
+$('rv-export').onclick=()=>verifyCsv('pokewatch_site_metrics.csv',revenueRows,['day','visits','clicks','yen']);
+renderForward();renderRevenue();
 </script></body></html>

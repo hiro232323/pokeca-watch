@@ -1,0 +1,602 @@
+[
+  {
+    "card_id": "001 132/106",
+    "name": "ピカチュウex SAR (超電ブレイカー)",
+    "raw_price": 58300,
+    "psa10_price": null
+  },
+  {
+    "card_id": "002 234/193",
+    "name": "ピカチュウex SAR (MEGAドリームex)",
+    "raw_price": 24800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "003 223/184",
+    "name": "ピカチュウVMAX CSR (VMAXクライマックス)",
+    "raw_price": 17800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "004 279/184",
+    "name": "ピカチュウVMAX UR (VMAXクライマックス)",
+    "raw_price": 24800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "005 205/172",
+    "name": "ピカチュウ AR (VSTARユニバース)",
+    "raw_price": 39800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "006 217/187",
+    "name": "ブラッキーex SAR (テラスタルフェスex)",
+    "raw_price": 49800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "007 085/069",
+    "name": "ブラッキーV SR (イーブイヒーローズ)",
+    "raw_price": 59800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "008 091/069",
+    "name": "グレイシアVMAX HR (イーブイヒーローズ)",
+    "raw_price": 99800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "009 089/069",
+    "name": "リーフィアVMAX HR (イーブイヒーローズ)",
+    "raw_price": 69800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "010 081/069",
+    "name": "エーフィV SR (イーブイヒーローズ)",
+    "raw_price": 23800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "011 212/187",
+    "name": "ニンフィアex SAR (テラスタルフェスex)",
+    "raw_price": 17800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "012 347/190",
+    "name": "ミュウex SAR (シャイニートレジャーex)",
+    "raw_price": 69800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "013 201/165",
+    "name": "リザードンex SAR (ポケモンカード151)",
+    "raw_price": 57300,
+    "psa10_price": null
+  },
+  {
+    "card_id": "014 134/108",
+    "name": "リザードンex SAR (黒炎の支配者)",
+    "raw_price": 39800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "015 349/190",
+    "name": "リザードンex SAR (シャイニートレジャーex)",
+    "raw_price": 34800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "016 113/076",
+    "name": "メガレックウザex MUR (ストームエメラルダ)",
+    "raw_price": 69800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "017 110/076",
+    "name": "メガレックウザex SAR (ストームエメラルダ)",
+    "raw_price": 29800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "018 240/193",
+    "name": "メガゲンガーex SAR (MEGAドリームex)",
+    "raw_price": 39800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "019 092/063",
+    "name": "メガルカリオex MUR (メガブレイブ)",
+    "raw_price": 34800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "020 092/063",
+    "name": "メガサーナイトex MUR (メガシンフォニア)",
+    "raw_price": 33800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "021 090/066",
+    "name": "ゲッコウガex SAR (クリムゾンヘイズ)",
+    "raw_price": 36300,
+    "psa10_price": null
+  },
+  {
+    "card_id": "022 096/071",
+    "name": "ナンジャモ SAR (クレイバースト)",
+    "raw_price": 39800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "023 087/063",
+    "name": "シロナのガブリアスex SAR (熱風のアリーナ)",
+    "raw_price": 39800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "024 125/098",
+    "name": "ロケット団のミュウツーex SAR (ロケット団の栄光)",
+    "raw_price": 59800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "025 087/064",
+    "name": "ラティアスex SAR (楽園ドラゴーナ)",
+    "raw_price": 22300,
+    "psa10_price": null
+  },
+  {
+    "card_id": "026 246/193",
+    "name": "メガカイリューex SAR (MEGAドリームex)",
+    "raw_price": 19800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "027 250/193",
+    "name": "メガカイリューex MUR (MEGAドリームex)",
+    "raw_price": 24800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "028 091/063",
+    "name": "リーリエの決心 SAR (メガブレイブ)",
+    "raw_price": 16800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "029 088/063",
+    "name": "メガラティアスex SAR (メガシンフォニア)",
+    "raw_price": 2895,
+    "psa10_price": null
+  },
+  {
+    "card_id": "030 089/063",
+    "name": "メガガルーラex SAR (メガシンフォニア)",
+    "raw_price": 3030,
+    "psa10_price": null
+  },
+  {
+    "card_id": "031 087/063",
+    "name": "メガサーナイトex SAR (メガシンフォニア)",
+    "raw_price": 9180,
+    "psa10_price": null
+  },
+  {
+    "card_id": "032 088/063",
+    "name": "メガルカリオex SAR (メガブレイブ)",
+    "raw_price": 5730,
+    "psa10_price": null
+  },
+  {
+    "card_id": "033 114/080",
+    "name": "ニャースex SAR (ムニキスゼロ)",
+    "raw_price": 7980,
+    "psa10_price": null
+  },
+  {
+    "card_id": "034 115/080",
+    "name": "メイのはげまし SAR (ムニキスゼロ)",
+    "raw_price": 8980,
+    "psa10_price": null
+  },
+  {
+    "card_id": "035 117/080",
+    "name": "メガジガルデex MUR (ムニキスゼロ)",
+    "raw_price": 19800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "036 111/080",
+    "name": "メガスターミーex SAR (ムニキスゼロ)",
+    "raw_price": 2980,
+    "psa10_price": null
+  },
+  {
+    "card_id": "037 117/083",
+    "name": "チラチーノex SAR (ニンジャスピナー)",
+    "raw_price": 3280,
+    "psa10_price": null
+  },
+  {
+    "card_id": "038 114/083",
+    "name": "メガゲッコウガex SAR (ニンジャスピナー)",
+    "raw_price": 17800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "039 117/081",
+    "name": "ムク SAR (アビスアイ)",
+    "raw_price": 3780,
+    "psa10_price": null
+  },
+  {
+    "card_id": "040 118/081",
+    "name": "メガダークライex MUR (アビスアイ)",
+    "raw_price": 30800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "041 114/081",
+    "name": "メガダークライex SAR (アビスアイ)",
+    "raw_price": 17800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "042 112/076",
+    "name": "ヒガナの信頼 SAR (ストームエメラルダ)",
+    "raw_price": 1780,
+    "psa10_price": null
+  },
+  {
+    "card_id": "043 108/076",
+    "name": "ライコウex SAR (ストームエメラルダ)",
+    "raw_price": 4030,
+    "psa10_price": null
+  },
+  {
+    "card_id": "044 131/103",
+    "name": "ゲンガーex SAR (30th CELEBRATION)",
+    "raw_price": 4980,
+    "psa10_price": null
+  },
+  {
+    "card_id": "045 094/080",
+    "name": "メガリザードンXex SR (インフェルノX)",
+    "raw_price": 3530,
+    "psa10_price": null
+  },
+  {
+    "card_id": "046 073/071",
+    "name": "ピカチュウ CHR (ダークファンタズマ)",
+    "raw_price": 5980,
+    "psa10_price": null
+  },
+  {
+    "card_id": "047 074/071",
+    "name": "ゲンガー CHR (ダークファンタズマ)",
+    "raw_price": 3480,
+    "psa10_price": null
+  },
+  {
+    "card_id": "048 077/071",
+    "name": "カビゴン CHR (ダークファンタズマ)",
+    "raw_price": 1480,
+    "psa10_price": null
+  },
+  {
+    "card_id": "049 088/071",
+    "name": "ラブトロスV CSR (ダークファンタズマ)",
+    "raw_price": 1400,
+    "psa10_price": null
+  },
+  {
+    "card_id": "050 082/068",
+    "name": "ふりそで SR (白熱のアルカナ)",
+    "raw_price": 1690,
+    "psa10_price": null
+  },
+  {
+    "card_id": "051 084/068",
+    "name": "ジャローダV CSR (白熱のアルカナ)",
+    "raw_price": 4530,
+    "psa10_price": null
+  },
+  {
+    "card_id": "052 081/068",
+    "name": "セレナ SR (白熱のアルカナ)",
+    "raw_price": 6980,
+    "psa10_price": null
+  },
+  {
+    "card_id": "053 262/172",
+    "name": "アルセウスVSTAR UR (VSTARユニバース)",
+    "raw_price": 14800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "054 259/172",
+    "name": "オリジンパルキアVSTAR UR (VSTARユニバース)",
+    "raw_price": 9410,
+    "psa10_price": null
+  },
+  {
+    "card_id": "055 261/172",
+    "name": "ギラティナVSTAR UR (VSTARユニバース)",
+    "raw_price": 29800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "056 221/172",
+    "name": "ミュウツーVSTAR SAR (VSTARユニバース)",
+    "raw_price": 13300,
+    "psa10_price": null
+  },
+  {
+    "card_id": "057 252/184",
+    "name": "レックウザVMAX CSR (VMAXクライマックス)",
+    "raw_price": 14800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "058 284/184",
+    "name": "レックウザVMAX UR (VMAXクライマックス)",
+    "raw_price": 12800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "059 112/100",
+    "name": "アルセウスV SR (スターバース)",
+    "raw_price": 7980,
+    "psa10_price": null
+  },
+  {
+    "card_id": "060 126/100",
+    "name": "ハイパーボール UR (スターバース)",
+    "raw_price": 7980,
+    "psa10_price": null
+  },
+  {
+    "card_id": "061 103/100",
+    "name": "リザードンV SR (スターバース)",
+    "raw_price": 29800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "062 118/100",
+    "name": "リザードンVSTAR HR (スターバース)",
+    "raw_price": 14800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "063 058/049",
+    "name": "ミミッキュ CHR (ドリームリーグ)",
+    "raw_price": 7580,
+    "psa10_price": null
+  },
+  {
+    "card_id": "064 068/060",
+    "name": "マリィ SR (シールド)",
+    "raw_price": 44300,
+    "psa10_price": null
+  },
+  {
+    "card_id": "065 169/086",
+    "name": "ゼクロムex SAR (ブラックボルト)",
+    "raw_price": 22800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "066 168/086",
+    "name": "レシラムex SAR (ホワイトフレア)",
+    "raw_price": 19800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "067 084/078",
+    "name": "キルリア AR (スカーレットex)",
+    "raw_price": 1380,
+    "psa10_price": null
+  },
+  {
+    "card_id": "068 208/165",
+    "name": "ミュウex UR (ポケモンカード151)",
+    "raw_price": 11390,
+    "psa10_price": null
+  },
+  {
+    "card_id": "069 206/165",
+    "name": "エリカの招待 SAR (ポケモンカード151)",
+    "raw_price": 5480,
+    "psa10_price": null
+  },
+  {
+    "card_id": "070 091/071",
+    "name": "ナンジャモ SR (クレイバースト)",
+    "raw_price": 3980,
+    "psa10_price": null
+  },
+  {
+    "card_id": "071 101/078",
+    "name": "サーナイトex SAR (スカーレットex)",
+    "raw_price": 24800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "072 092/066",
+    "name": "サザレ SAR (クリムゾンヘイズ)",
+    "raw_price": 9480,
+    "psa10_price": null
+  },
+  {
+    "card_id": "073 093/066",
+    "name": "スイレンのお世話 SAR (クリムゾンヘイズ)",
+    "raw_price": 3405,
+    "psa10_price": null
+  },
+  {
+    "card_id": "074 069/062",
+    "name": "グラードン AR (レイジングサーフ)",
+    "raw_price": 3080,
+    "psa10_price": null
+  },
+  {
+    "card_id": "075 085/062",
+    "name": "ガブリアスex SAR (レイジングサーフ)",
+    "raw_price": 4480,
+    "psa10_price": null
+  },
+  {
+    "card_id": "076 204/165",
+    "name": "サンダーex SAR (ポケモンカード151)",
+    "raw_price": 13800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "077 202/165",
+    "name": "カメックスex SAR (ポケモンカード151)",
+    "raw_price": 16800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "078 200/165",
+    "name": "フシギバナex SAR (ポケモンカード151)",
+    "raw_price": 17800,
+    "psa10_price": null
+  },
+  {
+    "card_id": "079 166/165",
+    "name": "フシギダネ AR (ポケモンカード151)",
+    "raw_price": 2480,
+    "psa10_price": null
+  },
+  {
+    "card_id": "080 131/106",
+    "name": "ミロカロスex SAR (超電ブレイカー)",
+    "raw_price": 10600,
+    "psa10_price": null
+  },
+  {
+    "card_id": "081 133/106",
+    "name": "サザンドラex SAR (超電ブレイカー)",
+    "raw_price": 3640,
+    "psa10_price": null
+  },
+  {
+    "card_id": "082 135/106",
+    "name": "ミカンのまなざし SAR (超電ブレイカー)",
+    "raw_price": 3230,
+    "psa10_price": null
+  },
+  {
+    "card_id": "083 078/064",
+    "name": "ラティアスex SR (楽園ドラゴーナ)",
+    "raw_price": 1930,
+    "psa10_price": null
+  },
+  {
+    "card_id": "084 091/064",
+    "name": "ルチアのアピール SAR (楽園ドラゴーナ)",
+    "raw_price": 18300,
+    "psa10_price": null
+  },
+  {
+    "card_id": "085 086/064",
+    "name": "ルチアのアピール SR (楽園ドラゴーナ)",
+    "raw_price": 2070,
+    "psa10_price": null
+  },
+  {
+    "card_id": "086 089/064",
+    "name": "アローラナッシーex SAR (楽園ドラゴーナ)",
+    "raw_price": 2730,
+    "psa10_price": null
+  },
+  {
+    "card_id": "087 091/066",
+    "name": "ガチグマアカツキex SAR (クリムゾンヘイズ)",
+    "raw_price": 2595,
+    "psa10_price": null
+  },
+  {
+    "card_id": "088 089/064",
+    "name": "キチキギスex SAR (ナイトワンダラー)",
+    "raw_price": 2330,
+    "psa10_price": null
+  },
+  {
+    "card_id": "089 090/064",
+    "name": "モモワロウex SAR (ナイトワンダラー)",
+    "raw_price": 1780,
+    "psa10_price": null
+  },
+  {
+    "card_id": "090 091/064",
+    "name": "カシオペア SAR (ナイトワンダラー)",
+    "raw_price": 1930,
+    "psa10_price": null
+  },
+  {
+    "card_id": "091 130/098",
+    "name": "ロケット団のミュウツーex UR (ロケット団の栄光)",
+    "raw_price": 9980,
+    "psa10_price": null
+  },
+  {
+    "card_id": "092 127/103",
+    "name": "ピカチュウex SAR (30th CELEBRATION)",
+    "raw_price": 6980,
+    "psa10_price": null
+  },
+  {
+    "card_id": "093 126/103",
+    "name": "ピカチュウex SAR (30th CELEBRATION)",
+    "raw_price": 6030,
+    "psa10_price": null
+  },
+  {
+    "card_id": "094 129/103",
+    "name": "ミュウex SAR (30th CELEBRATION)",
+    "raw_price": 6980,
+    "psa10_price": null
+  },
+  {
+    "card_id": "095 102/086",
+    "name": "ミジュマル AR (ホワイトフレア)",
+    "raw_price": 6980,
+    "psa10_price": null
+  },
+  {
+    "card_id": "096 111/080",
+    "name": "オドリドリex SAR (インフェルノX)",
+    "raw_price": 2980,
+    "psa10_price": null
+  },
+  {
+    "card_id": "097 350/190",
+    "name": "ナンジャモ SAR (シャイニートレジャーex)",
+    "raw_price": 6430,
+    "psa10_price": null
+  },
+  {
+    "card_id": "098 127/100",
+    "name": "Nのゾロアークex SAR (バトルパートナーズ)",
+    "raw_price": 6980,
+    "psa10_price": null
+  },
+  {
+    "card_id": "099 125/100",
+    "name": "ナンジャモのハラバリーex SAR (バトルパートナーズ)",
+    "raw_price": 7480,
+    "psa10_price": null
+  },
+  {
+    "card_id": "100 126/100",
+    "name": "リーリエのピッピex SAR (バトルパートナーズ)",
+    "raw_price": 22800,
+    "psa10_price": null
+  }
+]

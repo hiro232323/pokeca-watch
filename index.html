@@ -37,12 +37,54 @@ header{display:flex;justify-content:space-between;gap:16px;align-items:center;fl
 .modal a{color:#7bd9d0}.hoverable:hover{transform:scale(1.8);transform-origin:top left;position:relative;z-index:8;box-shadow:0 7px 25px #000b}
 @media(max-width:650px){main{padding:18px 12px 60px}.summary{gap:8px}.metric{padding:12px}.metric strong{font-size:22px}.toolbar input{width:100%}.detailrow{grid-template-columns:1fr 1fr}}
 
+
+/* v5: local-only paper trading and earnings validation */
+.lab{margin:22px 0;border:1px solid #35536a;background:#101c2b;border-radius:16px;padding:18px}
+.lab h2{margin:0 0 8px;font-size:20px}.lab p{color:var(--sub);font-size:13px;line-height:1.7}
+.lab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.lab label{display:block;font-size:12px;color:#bdd1e4;margin-bottom:5px}
+.lab input,.lab select{width:100%;padding:10px;border-radius:9px;background:#1c2b40;color:#f2f6fc;border:1px solid #4b6078;font-size:15px}
+.lab-stat{padding:12px;background:#19293d;border-radius:12px}.lab-stat b{display:block;font-size:23px;margin-top:5px}.lab-stat span{color:#afc3dc;font-size:12px}
+.lab-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.lab button{cursor:pointer}
+.lab-table{overflow:auto;margin-top:14px}.lab table{width:100%;border-collapse:collapse;min-width:640px;font-size:12px}.lab td,.lab th{text-align:left;padding:10px;border-bottom:1px solid #31445b}.lab th{color:#aec6dc}
+.lab-note{font-size:12px;color:#bdccdd;margin-top:12px}.lab-danger{color:#ffb6a8}.lab-green{color:#88e3ba}
+@media(max-width:650px){.lab{padding:14px}.lab-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head>
 <body><main>
 <header><div><div class="brand">POKÉ <em>WATCH</em></div><div class="subtitle">ポケカ相場ウォッチ | 通常・PSA10・価格推移</div></div><div class="subtitle" id="updated">最終更新：未取得</div></header>
 <section class="summary"><div class="metric"><span>登録カード</span><strong id="total">0 枚</strong></div><div class="metric"><span>通常価格を取得済み</span><strong id="rawcount">0 枚</strong></div><div class="metric"><span>PSA10価格を取得済み</span><strong id="psacount">0 枚</strong></div></section>
 <div class="notice"><strong>価格について：</strong>初回の通常価格は2026年11月17日に記録したショップ掲載参考値です。最新の売買成立価格や買取価格を示すものではありません。PSA10は未取得です。6時間ごとの自動実行では市場価格を収集していません。</div>
+
+<section class="lab" id="profit-lab">
+<h2>利益検証ラボ <span style="color:#8ee1d6;font-size:12px">無料・仮想売買</span></h2>
+<p>最初はお金を使わず、仕入れと売却を仮登録して検証します。カード一覧の価格はショップ掲載参考値であり、売却できる価格ではありません。下の売却予定価格は自分で確認した金額を入力してください。</p>
+<div class="lab-grid">
+  <div><label for="lab-card">カード</label><select id="lab-card"></select></div>
+  <div><label for="lab-kind">品種</label><select id="lab-kind"><option value="raw">通常品</option><option value="psa10">PSA10</option></select></div>
+  <div><label for="lab-buy">仮の仕入価格（円）</label><input id="lab-buy" type="number" min="1" step="1" placeholder="例：10000"></div>
+  <div><label for="lab-sell">仮の売却価格（円）</label><input id="lab-sell" type="number" min="1" step="1" placeholder="例：14000"></div>
+  <div><label for="lab-fee">販売手数料（%）</label><input id="lab-fee" type="number" min="0" max="100" step="0.1" value="10"></div>
+  <div><label for="lab-shipping">送料（円）</label><input id="lab-shipping" type="number" min="0" step="1" value="230"></div>
+  <div><label for="lab-other">その他費用（円）</label><input id="lab-other" type="number" min="0" step="1" value="0"></div>
+</div>
+<div class="lab-grid" style="margin-top:14px">
+  <div class="lab-stat"><span>想定利益 / 1枚</span><b id="lab-profit">—</b></div>
+  <div class="lab-stat"><span>損益分岐 売却価格</span><b id="lab-break">—</b></div>
+  <div class="lab-stat"><span>月5万円まで必要な取引件数</span><b id="lab-target">—</b></div>
+  <div class="lab-stat"><span>仮想取引の累計想定利益</span><b id="lab-total">0円</b></div>
+</div>
+<p class="lab-note">手数料は売却価格×入力率で試算（円未満切り上げ）。税金・保管費・返品・売れ残り・値下がり・発送事故等は別。損益分岐は手数料を切り上げた場合でも赤字にならない最小の整数売価です。</p>
+<div class="lab-actions"><button type="button" id="lab-save" class="btn">この条件で仮想取引を記録</button><button type="button" id="lab-export" class="btn">検証履歴をCSV保存</button><button type="button" id="lab-clear" class="btn">履歴を全削除</button></div>
+<div class="lab-table"><table><thead><tr><th>記録日</th><th>カード・品種</th><th>仕入</th><th>売却</th><th>想定利益</th><th>操作</th></tr></thead><tbody id="lab-history"><tr><td colspan="6">仮想取引はまだありません。</td></tr></tbody></table></div>
+<p class="lab-note">記録はこの端末のブラウザだけに保存します。サイト運営者が全利用者の売買を集計するものではありません。保存前にCSVでバックアップできます。</p>
+</section>
+<section class="lab" id="site-lab">
+<h2>サイト収益の検証</h2>
+<p>今のサイトには広告・アフィリエイト・アクセス解析が未接続なので、収益は0円（計測未開始）です。まず30日間で検索流入・利用者数・クリック数・収益の実測値を集め、続けるか判断します。</p>
+<div class="lab-grid"><div class="lab-stat"><span>広告 / 紹介収入</span><b>未計測</b></div><div class="lab-stat"><span>訪問者数</span><b>未計測</b></div><div class="lab-stat"><span>月5万円達成</span><b>未達</b></div></div>
+<p class="lab-note">他社サイトへの検索リンクは成果報酬リンクではありません。利用条件の確認前に自動収集や無断転載は行いません。</p>
+</section>
 <div class="toolbar"><input id="search" placeholder="カード名・カード番号で検索" aria-label="カード検索"><select id="filter" aria-label="表示するカード"><option value="all">すべてのカード</option><option value="raw">通常価格あり</option><option value="psa10">PSA10価格あり</option><option value="missing">価格未取得</option><option value="favorite">★ お気に入り</option></select><select id="sort" aria-label="並び替え"><option value="name">カード名順</option><option value="rawdesc">通常価格が高い順</option><option value="psadesc">PSA10価格が高い順</option><option value="rawasc">通常価格が安い順</option><option value="recent">記録日が新しい順</option></select><button id="export" class="btn" type="button">表示一覧をCSV保存</button></div>
 <div class="status" id="status">価格データを確認しています…</div><section class="cards" id="cards"></section>
 <dialog id="modal" class="modal" aria-label="カードの詳細"><div id="modalbody"></div></dialog><p class="foot">※掲載価格は入力・取得した記録であり、リアルタイム取引価格ではありません。価格の出典と更新日を確認してください。画像は許諾・利用条件が確認されたURLが登録された場合のみ表示します。</p>
@@ -178,6 +220,7 @@ function render(){
   const last=history.filter(h=>h.card_id===c.card_id).at(-1);
   if(last) article.append(elem('div','tiny',`記録日：${last.date} / 出典：${last.source||'未記載'}`));
   article.append(marketLinks(c));
+  const pick=elem('button','btn detailbtn','このカードで利益を試算する');pick.onclick=()=>{ $('lab-card').value=c.card_id; $('lab-buy').value=''; $('lab-sell').value=''; calculate();document.getElementById('profit-lab').scrollIntoView({behavior:'smooth'})};article.append(pick);
   const btn=elem('button','btn detailbtn','価格履歴の詳細を見る');btn.onclick=()=>detail(c);article.append(btn);
   wrap.append(article);
  }
@@ -200,6 +243,7 @@ async function fetchJson(p){const r=await fetch(p+'?v='+Date.now(),{cache:'no-st
    fetchJson('data/catalog.json')
  ]);
  cards=p.status==='fulfilled'&&Array.isArray(p.value)?p.value:[];
+ populateTradeCards();
  history=h.status==='fulfilled'&&Array.isArray(h.value)?h.value:[];
  images=im.status==='fulfilled'&&im.value&&typeof im.value==='object'&&!Array.isArray(im.value)?im.value:{};
  catalog=cat.status==='fulfilled'&&cat.value&&typeof cat.value==='object'&&!Array.isArray(cat.value)?cat.value:{};
@@ -214,4 +258,60 @@ async function fetchJson(p){const r=await fetch(p+'?v='+Date.now(),{cache:'no-st
 for(const id of ['search','filter','sort'])$(id).addEventListener(id==='search'?'input':'change',render);
 $('export').addEventListener('click',exportCSV);
 $('modal').addEventListener('click',e=>{if(e.target===$('modal'))$('modal').close()});
+
+// All simulations are local-only and do not imply executable market prices.
+let paperTrades=[];
+try{const x=JSON.parse(localStorage.getItem('pokewatch-paper-v1')||'[]');if(Array.isArray(x))paperTrades=x.filter(t=>t&&typeof t==='object').slice(-500)}catch(e){}
+function numberFrom(id){const v=$(id).value.trim();if(v==='')return NaN;return Number(v)}
+function profitCalc(buy,sell,percent,shipping,other){
+ if(![buy,sell,percent,shipping,other].every(Number.isFinite)||buy<=0||sell<=0||percent<0||percent>=100||shipping<0||other<0)return null;
+ const fee=Math.ceil(sell*percent/100);
+ const profit=sell-fee-buy-shipping-other;
+ // Avoid rounding artifacts by searching a nearby integer to account for fee rounding.
+ let breakEven=Math.max(1,Math.ceil((buy+shipping+other)/(1-percent/100)));
+ while(breakEven-Math.ceil(breakEven*percent/100)-buy-shipping-other<0)breakEven++;
+ return {profit,breakEven,needed:profit>0?Math.ceil(50000/profit):null,fee};
+}
+function readScenario(){
+ const buy=numberFrom('lab-buy'),sell=numberFrom('lab-sell'),percent=numberFrom('lab-fee'),shipping=numberFrom('lab-shipping'),other=numberFrom('lab-other');
+ return {buy,sell,percent,shipping,other,result:profitCalc(buy,sell,percent,shipping,other)};
+}
+function calculate(){
+ const s=readScenario();const r=s.result;
+ $('lab-profit').textContent=r?((r.profit>=0?'+':'')+r.profit.toLocaleString('ja-JP')+'円'):'—';
+ $('lab-profit').className=r?(r.profit>=0?'lab-green':'lab-danger'):'';
+ $('lab-break').textContent=r?r.breakEven.toLocaleString('ja-JP')+'円':'—';
+ $('lab-target').textContent=r&&r.needed?r.needed.toLocaleString('ja-JP')+'件':'—';
+ return s;
+}
+function populateTradeCards(){
+ const select=$('lab-card');select.replaceChildren();
+ for(const c of cards){const opt=elem('option','',`${c.name} [${c.card_id}]`);opt.value=c.card_id;select.append(opt)}
+}
+function saveTrades(){try{localStorage.setItem('pokewatch-paper-v1',JSON.stringify(paperTrades))}catch(e){alert('保存できませんでした。CSVで記録してください。')}}
+function renderTrades(){
+ const tbody=$('lab-history');tbody.replaceChildren();let total=0;
+ if(!paperTrades.length){const tr=elem('tr');const td=elem('td','','仮想取引はまだありません。');td.colSpan=6;tr.append(td);tbody.append(tr)}
+ for(const [i,t] of paperTrades.entries()){
+   const r=profitCalc(t.buy,t.sell,t.percent,t.shipping,t.other);if(!r)continue;
+   total+=r.profit;const tr=elem('tr');
+   for(const value of [t.date,`${t.name} / ${t.kind==='psa10'?'PSA10':'通常品'}`,money(t.buy),money(t.sell),money(r.profit)])tr.append(elem('td','',value));
+   const action=elem('td');const del=elem('button','btn','削除');del.onclick=()=>{paperTrades.splice(i,1);saveTrades();renderTrades()};action.append(del);tr.append(action);tbody.append(tr)
+ }
+ $('lab-total').textContent=(total>=0?'+':'')+total.toLocaleString('ja-JP')+'円';
+}
+function downloadText(filename,content){const b=new Blob([content],{type:'text/csv;charset=utf-8'});const url=URL.createObjectURL(b),a=document.createElement('a');a.href=url;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),1200)}
+function csvCell(v){return '"'+String(v??'').replace(/"/g,'""')+'"'}
+function exportTrades(){
+ const keys=['date','card_id','name','kind','buy','sell','percent','shipping','other','profit'];
+ const rows=paperTrades.map(t=>{const r=profitCalc(t.buy,t.sell,t.percent,t.shipping,t.other);return {...t,profit:r?r.profit:''}});
+ const csv='\ufeff'+keys.join(',')+'\r\n'+rows.map(t=>keys.map(k=>csvCell(t[k])).join(',')).join('\r\n');
+ downloadText('pokewatch_paper_trades.csv',csv);
+}
+for(const id of ['lab-buy','lab-sell','lab-fee','lab-shipping','lab-other'])$(id).addEventListener('input',calculate);
+$('lab-save').onclick=()=>{const s=calculate(),c=cards.find(c=>c.card_id===$('lab-card').value);if(!s.result||!c){alert('仕入・売却価格と手数料などの有効な数字を入力してください。');return}paperTrades.push({date:new Date().toLocaleDateString('sv-SE'),card_id:c.card_id,name:c.name,kind:$('lab-kind').value,buy:s.buy,sell:s.sell,percent:s.percent,shipping:s.shipping,other:s.other});if(paperTrades.length>500)paperTrades.shift();saveTrades();renderTrades()};
+$('lab-export').onclick=exportTrades;
+$('lab-clear').onclick=()=>{if(confirm('この端末に保存した仮想取引をすべて削除しますか？（事前のCSV保存を推奨）')){paperTrades=[];saveTrades();renderTrades()}};
+renderTrades();calculate();
+
 </script></body></html>
